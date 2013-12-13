@@ -1,0 +1,108 @@
+<!doctype html>
+<!--[if lte IE 7]> <html class="no-js ie67 ie678" lang="fr"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie8 ie678" lang="fr"> <![endif]-->
+<!--[if IE 9]> <html class="no-js ie9" lang="fr"> <![endif]-->
+<!--[if gt IE 9]> <!--><html class="no-js" lang="fr"> <!--<![endif]-->
+<head>
+		<meta charset="UTF-8">
+		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+		<title>TweetLoc</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/main.css" media="all">
+		<!--<link rel="stylesheet" href="css/screen.css" media="all and (min-device-width: 480px)">
+		<link rel="stylesheet" href="css/mobile.css" media="all and (max-device-width: 480px)">-->
+		<link rel="stylesheet" href="css/screen.css" media="all and (min-width: 480px)">
+		<link rel="stylesheet" href="css/mobile.css" media="all and (max-width: 480px)">
+
+		<script src="http://openlayers.org/api/OpenLayers.js"></script>
+		<script src="js/main.js"></script>
+</head>
+<body>
+	<header>
+		<h1>#TweetLoc</h1>
+		<nav id="navigation">
+			<a id="nav_twit"
+			   class="imageButton"
+			   href="#searchtab">
+				<img src="img/navtwit.png"
+					 alt="twiterLogo"/>
+			</a>
+			<a id="hashtag"
+			   class="imageButton"
+			   href="#nav_search_tab">
+				<img src="img/navhash.png"
+					 alt="twiterLogo"/>
+			</a>
+			
+			<div id="nav_search_tab">
+				<table>
+					<tr>
+						<td>
+							<input 	type="text"
+						   			id="search_text"
+						   			placeholder="#tag"
+						   			required/>
+						</td>
+						<td width="75px" align="right">
+							<a id="nav_search"
+								   class="imageButton"
+								   href="#searchtab"
+								   onclick="getTweets(document.getElementById('search_text').value, false, 0, 0, 0);">
+									<img src="img/navsearch.png"
+										 alt="twiterLogo"/>
+							</a>
+						</td>
+						<td>
+							<a id="nav_close"
+							   class="imageButton"
+							   href="#">
+								<img src="img/navclose.png"
+									 alt="twiterLogo"/>
+							</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</nav>
+	</header>
+	<div id="map">
+		<div id="mapDyn"></div>
+	</div>
+	<div id="searchtab">
+		<div id="searchtab_content">
+			<h2>Resultats <span id="resultsPages">(0)</span></h2>
+			<a id="search_close"
+			   class="imageButton"
+			   href="#">
+				<img src="img/navclose.png"
+					 alt="close"/>
+			</a>
+
+			<div id="spinner">
+				<img src="img/spinner.gif" alt="Loading"/>
+			</div>
+			<div id="resultsList">
+				Veuillez rechercher des tweets !
+			</div>
+		</div>
+	</div>
+	<div id="country_tab">
+		<label for="country">Pays</label>
+		<select id="country">
+			<option value="">Tous</option>
+			<option value="fr">France</option>
+			<option value="us">Etats unis</option>
+			<option value="sp">Espagne</option>
+			<option value="it">Italie</option>
+			<option value="ru">Russie</option>
+		</select>
+	</div>
+
+	<footer>
+		&copy; 2013 - Martin DEQUATREMARE - IUT Nantes
+	</footer>
+</body>
+</html>

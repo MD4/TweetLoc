@@ -1,0 +1,14 @@
+header {
+	display: block;
+}
+
+#nav_search_tab {
+	display: block;
+	position: absolute;
+	right: -2px;
+}
+
+#searchtab:target {
+	width: 90%;
+}
+
